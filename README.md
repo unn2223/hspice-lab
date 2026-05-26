@@ -27,3 +27,7 @@
 ## lab7
 
 <img src="./lab7/lab7_problem.svg" alt="lab7 problem" width="450">
+
+## lab8
+
+<img src="./lab8/lab8_problem.svg" alt="lab8 problem" width="450">
