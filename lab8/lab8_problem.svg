@@ -1,195 +1,227 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1294" height="943" viewBox="0 0 1294 943">
-  <rect width="1294" height="943" fill="#fff"/>
-  <rect x="19" y="5" width="709" height="55" fill="#ffff8a"/>
-  <text x="38" y="45" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="34" font-weight="600" fill="#000">
-    실습 1. <tspan font-family="Times New Roman, serif" font-weight="700">Op-amp SPICE</tspan> 시뮬레이션 따라하기
+<svg xmlns="http://www.w3.org/2000/svg" width="1328" height="960" viewBox="0 0 1328 960">
+  <rect width="1328" height="960" fill="#fff"/>
+  <style>
+    .wire{stroke:#000;stroke-width:2.4;fill:none;stroke-linecap:square;stroke-linejoin:round}
+    .sym{stroke:#000;stroke-width:2.5;fill:none;stroke-linecap:square;stroke-linejoin:round}
+    .node{fill:#000;stroke:#000;stroke-width:1.5}
+    .txt{font-family:"Times New Roman",serif;font-size:24px;font-weight:700;fill:#000}
+    .small{font-family:"Times New Roman",serif;font-size:24px;fill:#000}
+    .pink{font-family:"Times New Roman",serif;font-size:38px;font-weight:700;fill:#ff33cc}
+  </style>
+
+  <rect x="33" y="5" width="710" height="57" fill="#ffff8a"/>
+  <text x="51" y="45" font-family="Arial,'Malgun Gothic',sans-serif" font-size="34" font-weight="600" fill="#000">
+    실습 1. <tspan font-family="Times New Roman,serif" font-weight="700">Op-amp SPICE</tspan> 시뮬레이션 따라하기
   </text>
-  <text x="58" y="143" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="29" font-weight="600" fill="#ff2b10">
-    (1) <tspan font-family="Times New Roman, serif" font-weight="700">SPICE netlist</tspan> 작성을 위한 노드 번호를 설정한다.
+  <text x="72" y="143" font-family="Arial,'Malgun Gothic',sans-serif" font-size="30" font-weight="600" fill="#ff2b10">
+    (1) <tspan font-family="Times New Roman,serif" font-weight="700">SPICE netlist</tspan> 작성을 위한 노드 번호를 설정한다.
   </text>
 
-  <defs>
-    <g id="pmos">
-      <path d="M0 0 L0 56 M9 0 L9 56 M9 10 L38 10 M9 46 L38 46" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="square"/>
-      <polygon points="38,28 25,21 25,35" fill="#000"/>
-    </g>
-    <g id="nmos">
-      <path d="M0 0 L0 56 M9 0 L9 56 M9 10 L38 10 M9 46 L38 46" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="square"/>
-      <polygon points="25,28 38,21 38,35" fill="#000"/>
-    </g>
-    <g id="dot">
-      <circle r="7.5" fill="#000"/>
-    </g>
-  </defs>
+  <text x="571" y="216" class="txt">V<tspan baseline-shift="sub" font-size="16">DD</tspan></text>
+  <text x="622" y="877" class="txt">V<tspan baseline-shift="sub" font-size="16">SS</tspan></text>
 
-  <g stroke="#000" stroke-width="2.3" fill="none" stroke-linecap="square" stroke-linejoin="round">
-    <path d="M130 265 L1104 265"/>
-    <path d="M130 850 L1104 850"/>
-    <path d="M130 265 L130 850"/>
-    <path d="M1104 265 L1104 850"/>
-
-    <path d="M195 265 L195 420"/>
-    <path d="M250 265 L250 559"/>
-    <path d="M325 265 L325 850"/>
-    <path d="M480 265 L480 850"/>
-    <path d="M661 265 L661 510"/>
-    <path d="M820 265 L820 510"/>
-
-    <path d="M130 420 L195 420"/>
-    <path d="M130 558 L250 558"/>
-    <path d="M130 711 L198 711"/>
-    <path d="M198 558 L198 711"/>
-    <path d="M250 558 L250 659"/>
-    <path d="M325 650 L405 650"/>
-    <path d="M405 650 L405 735"/>
-    <path d="M325 735 L405 735"/>
-    <path d="M480 665 L973 665"/>
-    <path d="M973 665 L973 588"/>
-    <path d="M405 735 L720 735"/>
-    <path d="M720 735 L720 850"/>
-    <path d="M720 735 L1075 735"/>
-
-    <path d="M325 380 L405 380"/>
-    <path d="M405 380 L405 455"/>
-    <path d="M405 455 L480 455"/>
-    <path d="M325 520 L405 520"/>
-    <path d="M405 520 L405 600"/>
-    <path d="M405 600 L480 600"/>
-
-    <path d="M661 358 L743 358"/>
-    <path d="M743 358 L743 447"/>
-    <path d="M661 447 L743 447"/>
-    <path d="M820 450 L918 450"/>
-    <path d="M918 450 L1075 450"/>
-    <path d="M918 450 L918 588"/>
-    <path d="M1075 450 L1075 586"/>
-    <path d="M1075 586 L1215 586"/>
-    <path d="M1168 586 L1168 700"/>
+  <g class="wire">
+    <path d="M145 266H1118"/>
+    <path d="M145 851H1118"/>
+    <path d="M145 266V331H166"/>
+    <path d="M145 453H211V711H145"/>
+    <path d="M145 851V759"/>
+    <path d="M1118 266V362"/>
+    <path d="M1118 427V586"/>
+    <path d="M1118 586V711"/>
+    <path d="M1118 759V851"/>
+    <path d="M209 266V350"/>
+    <path d="M264 266V537"/>
+    <path d="M339 266V851"/>
+    <path d="M495 266V851"/>
+    <path d="M675 266V327"/>
+    <path d="M834 266V327"/>
+    <path d="M264 537H240V661H339"/>
+    <path d="M339 657H419V736H495"/>
+    <path d="M495 665H986V588"/>
+    <path d="M419 736H735V851"/>
+    <path d="M735 736H1090"/>
+    <path d="M339 382H417V457H495"/>
+    <path d="M339 525H417V601H495"/>
+    <path d="M675 359H757V447H675"/>
+    <path d="M834 451H934V588H972"/>
+    <path d="M934 451H1090"/>
+    <path d="M1090 586H1229"/>
+    <path d="M1181 586V638"/>
+    <path d="M1181 647V700"/>
   </g>
 
-  <g stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="square">
-    <path d="M322 294 L322 359"/>
-    <path d="M322 294 L329 302 L315 310 L329 318 L315 326 L329 334 L315 342 L322 350"/>
-    <path d="M790 510 L790 622 L662 622 L662 510"/>
+  <g class="sym">
+    <path d="M338 296V351"/>
+    <path d="M338 296l7 8-14 8 14 8-14 8 14 8-14 8 7 7"/>
+    <path d="M675 447V511"/>
+    <path d="M834 451V511"/>
+    <path d="M675 623H834V559"/>
+    <path d="M735 623V851"/>
+    <path d="M711 359H805"/>
+    <path d="M758 359V447"/>
   </g>
 
-  <use href="#pmos" x="128" y="330"/>
-  <use href="#nmos" x="128" y="452"/>
-  <use href="#nmos" x="128" y="710"/>
-  <use href="#nmos" x="228" y="560"/>
-  <use href="#pmos" x="324" y="360"/>
-  <use href="#nmos" x="324" y="490"/>
-  <use href="#nmos" x="324" y="720"/>
-  <use href="#pmos" x="454" y="360"/>
-  <use href="#nmos" x="454" y="490"/>
-  <use href="#nmos" x="454" y="720"/>
-  <use href="#pmos" x="662" y="327"/>
-  <use href="#nmos" x="640" y="510"/>
-  <use href="#pmos" x="790" y="327"/>
-  <use href="#nmos" x="820" y="510"/>
-  <use href="#pmos" x="1076" y="427"/>
-  <use href="#nmos" x="1076" y="725"/>
+  <g class="sym" transform="translate(143 332)">
+    <path d="M0 0V56M25 0V56M25 21H62M25 47H62"/>
+    <polygon points="7,28 25,18 25,38" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(143 454)">
+    <path d="M0 0V56M25 0V56M25 21H66M25 47H66"/>
+    <polygon points="7,48 25,38 25,58" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(143 711)">
+    <path d="M0 0V56M25 0V56M25 21H66M25 47H66"/>
+    <polygon points="7,48 25,38 25,58" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(238 537)">
+    <path d="M0 0V56M10 0V56M10 21H49M10 47H49"/>
+    <polygon points="49,47 28,37 28,57" fill="#000"/>
+  </g>
 
-  <g stroke="#000" stroke-width="2.6" fill="none">
-    <circle cx="613" cy="535" r="9"/>
-    <path d="M622 535 L640 535"/>
-    <path d="M604 535 L598 535"/>
-    <circle cx="865" cy="535" r="9"/>
-    <path d="M856 535 L848 535"/>
-    <path d="M874 535 L891 535"/>
-    <path d="M1013 588 L1013 606 L961 606 L961 588"/>
-    <path d="M1033 575 L1033 599"/>
-    <path d="M1042 575 L1042 599"/>
-    <path d="M1150 632 L1187 632"/>
-    <path d="M1150 648 L1187 648"/>
-    <path d="M1168 648 L1168 698"/>
-    <path d="M1155 699 L1180 699"/>
-    <path d="M1160 707 L1175 707"/>
+  <g class="sym" transform="translate(340 356)">
+    <path d="M0 0V56M25 0V56M25 21H62M25 47H62"/>
+    <polygon points="62,21 43,11 43,31" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(340 490)">
+    <path d="M0 0V56M25 0V56M25 21H62M25 47H62"/>
+    <polygon points="62,21 43,11 43,31" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(340 711)">
+    <path d="M0 0V56M25 0V56M25 21H62M25 47H62"/>
+    <polygon points="7,48 25,38 25,58" fill="#000"/>
+  </g>
+
+  <g class="sym" transform="translate(466 356)">
+    <path d="M0 0V56M30 0V56M0 21H-49M0 47H-49"/>
+    <polygon points="0,21 20,11 20,31" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(466 490)">
+    <path d="M0 0V56M30 0V56M0 21H-49M0 47H-49"/>
+    <polygon points="0,21 20,11 20,31" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(466 711)">
+    <path d="M0 0V56M30 0V56M0 21H-49M0 47H-49"/>
+    <polygon points="30,48 50,38 50,58" fill="#000"/>
+  </g>
+
+  <g class="sym" transform="translate(677 328)">
+    <path d="M0 0V56M30 0V56M30 20H80M30 47H80"/>
+    <polygon points="30,20 12,10 12,30" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(651 511)">
+    <path d="M0 0V56M25 0V56M25 21H77M25 47H77"/>
+    <polygon points="25,47 7,37 7,57" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(805 328)">
+    <path d="M0 0V56M30 0V56M0 20H-47M0 47H-47"/>
+    <polygon points="0,20 18,10 18,30" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(835 511)">
+    <path d="M0 0V56M25 0V56M0 21H-77M0 47H-77"/>
+    <polygon points="0,47 18,37 18,57" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(1092 427)">
+    <path d="M0 0V56M25 0V56M25 21H-3M25 47H-3"/>
+    <polygon points="0,0 -18,-10 -18,10" fill="#000"/>
+  </g>
+  <g class="sym" transform="translate(1092 711)">
+    <path d="M0 0V56M25 0V56M25 21H-3M25 47H-3"/>
+    <polygon points="25,48 45,38 45,58" fill="#000"/>
+  </g>
+
+  <g class="sym">
+    <circle cx="627" cy="536" r="9"/>
+    <path d="M636 536H651M618 536H612"/>
+    <circle cx="879" cy="536" r="9"/>
+    <path d="M870 536H854M888 536H904"/>
+    <path d="M972 588v19h-52v-19"/>
+    <path d="M972 588l-8 27-8-27z" fill="#000"/>
+    <path d="M1041 575V600M1050 575V600"/>
+    <path d="M1165 638H1200M1165 648H1200M1181 648V700"/>
+    <path d="M1169 700H1194M1174 708H1189"/>
   </g>
 
   <g>
-    <use href="#dot" x="195" y="265"/>
-    <use href="#dot" x="250" y="265"/>
-    <use href="#dot" x="325" y="265"/>
-    <use href="#dot" x="480" y="265"/>
-    <use href="#dot" x="661" y="265"/>
-    <use href="#dot" x="820" y="265"/>
-    <use href="#dot" x="130" y="418"/>
-    <use href="#dot" x="130" y="558"/>
-    <use href="#dot" x="198" y="558"/>
-    <use href="#dot" x="325" y="455"/>
-    <use href="#dot" x="325" y="650"/>
-    <use href="#dot" x="325" y="850"/>
-    <use href="#dot" x="405" y="380"/>
-    <use href="#dot" x="405" y="520"/>
-    <use href="#dot" x="405" y="735"/>
-    <use href="#dot" x="480" y="455"/>
-    <use href="#dot" x="480" y="600"/>
-    <use href="#dot" x="480" y="665"/>
-    <use href="#dot" x="480" y="850"/>
-    <use href="#dot" x="661" y="447"/>
-    <use href="#dot" x="743" y="358"/>
-    <use href="#dot" x="748" y="622"/>
-    <use href="#dot" x="720" y="850"/>
-    <use href="#dot" x="820" y="450"/>
-    <use href="#dot" x="918" y="450"/>
-    <use href="#dot" x="1013" y="588"/>
-    <use href="#dot" x="1075" y="586"/>
-    <use href="#dot" x="1104" y="586"/>
-    <use href="#dot" x="1168" y="586"/>
+    <circle class="node" cx="209" cy="266" r="8"/>
+    <circle class="node" cx="264" cy="266" r="8"/>
+    <circle class="node" cx="339" cy="266" r="8"/>
+    <circle class="node" cx="495" cy="266" r="8"/>
+    <circle class="node" cx="675" cy="266" r="8"/>
+    <circle class="node" cx="834" cy="266" r="8"/>
+    <circle class="node" cx="145" cy="420" r="8"/>
+    <circle class="node" cx="143" cy="559" r="8"/>
+    <circle class="node" cx="211" cy="560" r="8"/>
+    <circle class="node" cx="339" cy="455" r="8"/>
+    <circle class="node" cx="339" cy="657" r="8"/>
+    <circle class="node" cx="339" cy="851" r="8"/>
+    <circle class="node" cx="417" cy="382" r="8"/>
+    <circle class="node" cx="417" cy="526" r="8"/>
+    <circle class="node" cx="419" cy="736" r="8"/>
+    <circle class="node" cx="495" cy="457" r="8"/>
+    <circle class="node" cx="495" cy="600" r="8"/>
+    <circle class="node" cx="495" cy="665" r="8"/>
+    <circle class="node" cx="495" cy="851" r="8"/>
+    <circle class="node" cx="675" cy="447" r="8"/>
+    <circle class="node" cx="758" cy="359" r="8"/>
+    <circle class="node" cx="763" cy="623" r="8"/>
+    <circle class="node" cx="763" cy="851" r="8"/>
+    <circle class="node" cx="834" cy="451" r="8"/>
+    <circle class="node" cx="934" cy="451" r="8"/>
+    <circle class="node" cx="1027" cy="587" r="8"/>
+    <circle class="node" cx="1118" cy="587" r="8"/>
+    <circle class="node" cx="1181" cy="586" r="8"/>
   </g>
 
-  <g font-family="Times New Roman, serif" font-size="24" font-weight="700" fill="#000">
-    <text x="557" y="216">V<tspan baseline-shift="sub" font-size="17">DD</tspan></text>
-    <text x="608" y="875">V<tspan baseline-shift="sub" font-size="17">SS</tspan></text>
-    <text x="56" y="357">M18</text>
-    <text x="56" y="480">M17</text>
-    <text x="56" y="737">M15</text>
+  <g class="txt">
+    <text x="72" y="358">M18</text>
+    <text x="72" y="481">M17</text>
+    <text x="72" y="738">M15</text>
     <text x="255" y="571">M16</text>
-    <text x="272" y="388">M14</text>
-    <text x="270" y="530">M13</text>
-    <text x="268" y="737">M12</text>
-    <text x="483" y="383">M11</text>
-    <text x="482" y="535">M10</text>
-    <text x="488" y="767">M9</text>
-    <text x="623" y="358">M4</text>
-    <text x="652" y="536">M1</text>
-    <text x="780" y="536">M2</text>
-    <text x="762" y="767">M3</text>
-    <text x="822" y="358">M5</text>
-    <text x="1109" y="448">M6</text>
-    <text x="1109" y="744">M7</text>
-    <text x="954" y="567">M8</text>
-    <text x="356" y="318">R<tspan baseline-shift="sub" font-size="16">B</tspan></text>
-    <text x="1017" y="625">C<tspan baseline-shift="sub" font-size="16">c</tspan></text>
-    <text x="1190" y="643">C<tspan baseline-shift="sub" font-size="16">L</tspan></text>
-    <text x="570" y="584">V<tspan baseline-shift="sub" font-size="17">in</tspan></text>
-    <text x="849" y="584">V<tspan baseline-shift="sub" font-size="17">in</tspan></text>
-    <text x="1241" y="600">V<tspan baseline-shift="sub" font-size="17">out</tspan></text>
+    <text x="286" y="390">M14</text>
+    <text x="286" y="530">M13</text>
+    <text x="282" y="739">M12</text>
+    <text x="498" y="383">M11</text>
+    <text x="498" y="535">M10</text>
+    <text x="503" y="766">M9</text>
+    <text x="636" y="359">M4</text>
+    <text x="662" y="538">M1</text>
+    <text x="793" y="538">M2</text>
+    <text x="775" y="766">M3</text>
+    <text x="834" y="360">M5</text>
+    <text x="1123" y="448">M6</text>
+    <text x="1123" y="746">M7</text>
+    <text x="968" y="568">M8</text>
+    <text x="369" y="319">R<tspan baseline-shift="sub" font-size="16">B</tspan></text>
   </g>
 
-  <g font-family="Times New Roman, serif" font-size="36" font-weight="700" fill="#ff33cc">
-    <text x="82" y="425">13</text>
-    <text x="70" y="585">14</text>
-    <text x="276" y="354">11</text>
-    <text x="276" y="468">12</text>
-    <text x="345" y="648">8</text>
-    <text x="503" y="465">10</text>
-    <text x="507" y="648">9</text>
-    <text x="625" y="458">3</text>
-    <text x="581" y="544">2</text>
-    <text x="739" y="585">5</text>
-    <text x="912" y="425">4</text>
-    <text x="886" y="542">1</text>
-    <text x="992" y="563">6</text>
-    <text x="1074" y="563">7</text>
+  <g class="small">
+    <text x="585" y="585">V<tspan baseline-shift="sub" font-size="16">in</tspan></text>
+    <text x="864" y="585">V<tspan baseline-shift="sub" font-size="16">in</tspan></text>
+    <text x="1030" y="628">C<tspan baseline-shift="sub" font-size="16">c</tspan></text>
+    <text x="1202" y="645">C<tspan baseline-shift="sub" font-size="16">L</tspan></text>
+    <text x="1254" y="601">V<tspan baseline-shift="sub" font-size="16">out</tspan></text>
+    <text x="607" y="548">-</text>
+    <text x="611" y="576">+</text>
+    <text x="873" y="548">-</text>
+    <text x="904" y="576">+</text>
+    <text x="1302" y="588">+</text>
   </g>
 
-  <g font-family="Times New Roman, serif" font-size="24" fill="#000">
-    <text x="606" y="548">-</text>
-    <text x="610" y="576">+</text>
-    <text x="862" y="548">-</text>
-    <text x="890" y="576">+</text>
-    <text x="1290" y="586">+</text>
+  <g class="pink">
+    <text x="96" y="426">13</text>
+    <text x="84" y="586">14</text>
+    <text x="290" y="355">11</text>
+    <text x="290" y="468">12</text>
+    <text x="359" y="649">8</text>
+    <text x="518" y="466">10</text>
+    <text x="522" y="649">9</text>
+    <text x="640" y="458">3</text>
+    <text x="595" y="546">2</text>
+    <text x="753" y="586">5</text>
+    <text x="926" y="426">4</text>
+    <text x="900" y="542">1</text>
+    <text x="1006" y="564">6</text>
+    <text x="1088" y="564">7</text>
   </g>
 </svg>
