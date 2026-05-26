@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="882" viewBox="0 0 1366 882">
+  <rect width="1366" height="882" fill="#fff"/>
+  <rect x="35" y="13" width="1283" height="90" fill="#ffff8a"/>
+  <text x="49" y="50" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    •실습문제 3. 수동소자인 저항과 캐패시터으로 이루어진 회로에 <tspan font-family="Times New Roman, serif" font-weight="700">Pulse</tspan>전압을 인가하여
+  </text>
+  <text x="238" y="87" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    <tspan font-family="Times New Roman, serif" font-weight="700">transient</tspan> 해석하기
+  </text>
+
+  <text x="38" y="142" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    <tspan x="38" dy="0">Create a netlist nemed “lab3.sp” which describes the circuit shown at figure.</tspan>
+    <tspan x="38" dy="33">Add a pulse input to the voltage source as follows</tspan>
+    <tspan x="38" dy="33">(starting voltage = 0v, pulse voltage = 5v, delay = 10ns, rise time = fall time = 20ns,</tspan>
+    <tspan x="38" dy="33">pulse width = 500ns, pulse repetition time = 2us)</tspan>
+    <tspan x="38" dy="33">Use LIST , POST, NODE as options, and request an operating point be calculated.</tspan>
+    <tspan x="38" dy="33">And request an transient analysis until 2usec with 10nsec time step.</tspan>
+  </text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M346 365 L446 365"/>
+    <path d="M453 365 L560 365"/>
+    <path d="M346 365 L346 455"/>
+    <path d="M346 505 L346 628"/>
+    <path d="M346 628 L455 628"/>
+    <path d="M455 628 L558 628"/>
+    <path d="M558 628 L770 628"/>
+    <path d="M560 365 L560 422"/>
+    <path d="M560 458 L560 500"/>
+    <path d="M560 536 L560 628"/>
+    <path d="M560 501 L768 504"/>
+    <path d="M769 504 L769 560"/>
+    <path d="M769 582 L769 628"/>
+  </g>
+
+  <circle cx="447" cy="365" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="560" cy="501" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="454" cy="628" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+
+  <text x="456" y="357" font-family="Times New Roman, serif" font-size="31" fill="#000">1</text>
+  <text x="515" y="509" font-family="Times New Roman, serif" font-size="31" fill="#000">2</text>
+  <text x="441" y="609" font-family="Times New Roman, serif" font-size="31" fill="#000">0</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="345" cy="478" r="24"/>
+  </g>
+  <path d="M330 479 C336 469, 341 469, 346 479 C352 489, 358 489, 364 479" stroke="#000" stroke-width="3.5" fill="none"/>
+  <text x="354" y="446" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">+</text>
+  <text x="362" y="525" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">-</text>
+  <text x="269" y="493" font-family="Times New Roman, serif" font-size="32" fill="#000">
+    V<tspan baseline-shift="sub" font-size="20">i</tspan>
+  </text>
+  <text x="249" y="534" font-family="Times New Roman, serif" font-size="32" fill="#000">Pulse</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <polyline points="560,422 550,429 570,438 550,447 570,456 560,463"/>
+    <polyline points="560,500 550,507 570,516 550,525 570,534 560,541"/>
+  </g>
+  <text x="584" y="450" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R1</text>
+  <text x="630" y="480" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+  <text x="580" y="554" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R2</text>
+  <text x="631" y="562" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+
+  <g stroke="#000" stroke-width="4" fill="none" stroke-linecap="square">
+    <path d="M757 561 L781 561"/>
+    <path d="M757 574 L781 574"/>
+  </g>
+  <text x="812" y="563" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">C1</text>
+  <text x="802" y="604" font-family="Times New Roman, serif" font-size="31" fill="#000">0.001uF</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <path d="M454 628 L454 675"/>
+    <path d="M433 675 L475 675"/>
+    <path d="M439 684 L469 684"/>
+    <path d="M446 693 L462 693"/>
+  </g>
+
+  <text x="74" y="752" font-family="Times New Roman, serif" font-size="29" fill="#111">
+    <tspan x="74" dy="0">Run HSPICE, eg. Hspice lab3.sp &gt;\! Lab3.lis</tspan>
+    <tspan x="74" dy="33">Review the output file (lab3.lis ) and search for “transient analysis”.</tspan>
+    <tspan x="74" dy="33">After then, run awaves and call up lab1c.sp. Display the voltage at node1 and node 2.</tspan>
+    <tspan x="74" dy="33">And display the currents through r2 and c1.</tspan>
+  </text>
+</svg>

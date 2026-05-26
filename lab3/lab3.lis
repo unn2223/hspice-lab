@@ -1,0 +1,416 @@
+Using: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab3.sp
+ ****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: lab3.sp                                                           
+  Command line options: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab3.sp
+  Start time: Tue May 26 18:12:26 2026
+ lic:  
+ lic: FLEXlm: SDK_12.11.9.5 
+ lic: USER:   mario                HOSTNAME: mario 
+ lic: HOSTID: ffffffff91736e9d     PID:      7865 
+ lic: Using FLEXlm license files: 
+ lic: 27020@115.145.157.110:27021@115.145.157.110 
+ lic: Unable to checkout (hspice) 
+ lic:   
+ lic: Using FLEXlm license file: 
+ lic: 27021@115.145.157.110 
+ lic: Checkout 1 primesim 
+ lic: License/Maintenance for primesim will expire on 12-apr-2027/2026.03 
+ lic: 4(in_use)/30(total) FLOATING license(s) on SERVER 27021@115.145.157.110 
+ lic:   
+ scientific notation:
+ a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
+ m=10**-3   k=10**3    x=10**6    g=10**9 
+
+
+ circuit parameter definitions
+  parameter          =  value 
+
+
+
+
+
+ constants  - tnom         kt           vt           gapsi        ni
+            298.15000    4.1163e-21    25.69184m     1.11562    1.2565e+16 
+  **info** (lab3.sp:3) DC voltage reset to initial transient source value in source 0:vi. new dc=0.0000D+00
+1****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+ ******  
+ lab3.sp
+
+ ****** circuit element summary tnom=  25.000 temp=  25.000 ******
+
+
+ **** resistors
+
+  
+  
+                                        
+ element name        0:r1       0:r2    
+ node1               0:1        0:2     
+ node2               0:2        0:0     
+ model                                  
+ res eff             1.0000k    1.0000k 
+ tc1                 0.         0.      
+ tc2                 0.         0.      
+ scale               1.0000     1.0000  
+ m                   1.0000     1.0000  
+ ac                  1.0000k    1.0000k 
+ temp               25.0000    25.0000  
+ l                   0.         0.      
+ w                   0.         0.      
+ cap                 0.         0.      
+ noise            1.000e+00  1.000e+00  
+
+
+ **** capacitors
+  
+  
+                             
+ element name        0:c1    
+ node1               0:2     
+ node2               0:0     
+ model                       
+ cap eff             1.0000n 
+ tc1                 0.      
+ tc2                 0.      
+ scale               1.0000  
+ ic                  0.      
+ m                   1.0000  
+ w                   0.      
+ l                   0.      
+ temp               25.0000  
+
+
+ **** independent sources
+
+     name         node1        node2      dc volt    ac mag    ac phase    type
+  vi  1                 0                    0.         0.         0.      pulse
+             initial value     0.     
+             pulsed value.     5.0000 
+             delay time...    10.0000n
+             risetime.....    20.0000n
+             falltime.....    20.0000n
+             width........   500.0000n
+             period.......     2.0000u
+
+  
+ ******  
+ lab3.sp
+
+ ****** element node table
+                            
+ 0                r2 c1 vi  
+ 1                r1 vi     
+ 2                r1 r2 c1  
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ lab3.sp
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage
+
+ +0:1       =   0.      0:2       =   0.     
+
+
+ **** voltage sources
+
+ subckt             
+ element  0:vi      
+  volts      0.     
+  current    0.     
+  power      0.     
+
+     total voltage source power dissipation=    0.            watts
+
+
+
+ **** resistors
+
+ subckt                        
+ element  0:r1       0:r2      
+  r value    1.0000k    1.0000k
+  v drop     0.         0.     
+  current    0.         0.     
+  power      0.         0.     
+
+ ******
+ lab3.sp
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+x
+
+ time         voltage    voltage   
+             1          2          
+    0.          0.         0.      
+   10.00000n    0.         0.      
+   20.00000n    2.5000    15.1927m 
+   30.00000n    5.0000    49.7844m 
+   40.00000n    5.0000    98.1759m 
+   50.00000n    5.0000   145.3070m 
+   60.00000n    5.0000   191.4454m 
+   70.00000n    5.0000   237.5837m 
+   80.00000n    5.0000   281.2232m 
+   90.00000n    5.0000   322.0873m 
+  100.00000n    5.0000   362.9514m 
+  110.00000n    5.0000   403.8155m 
+  120.00000n    5.0000   444.6796m 
+  130.00000n    5.0000   485.5437m 
+  140.00000n    5.0000   526.4078m 
+  150.00000n    5.0000   567.2719m 
+  160.00000n    5.0000   608.1360m 
+  170.00000n    5.0000   649.0001m 
+  180.00000n    5.0000   683.0895m 
+  190.00000n    5.0000   716.6945m 
+  200.00000n    5.0000   750.2994m 
+  210.00000n    5.0000   783.9044m 
+  220.00000n    5.0000   817.5093m 
+  230.00000n    5.0000   851.1143m 
+  240.00000n    5.0000   884.7193m 
+  250.00000n    5.0000   918.3242m 
+  260.00000n    5.0000   951.9292m 
+  270.00000n    5.0000   985.5342m 
+  280.00000n    5.0000     1.0134  
+  290.00000n    5.0000     1.0409  
+  300.00000n    5.0000     1.0684  
+  310.00000n    5.0000     1.0959  
+  320.00000n    5.0000     1.1234  
+  330.00000n    5.0000     1.1509  
+  340.00000n    5.0000     1.1784  
+  350.00000n    5.0000     1.2059  
+  360.00000n    5.0000     1.2334  
+  370.00000n    5.0000     1.2609  
+  380.00000n    5.0000     1.2837  
+  390.00000n    5.0000     1.3062  
+  400.00000n    5.0000     1.3287  
+  410.00000n    5.0000     1.3512  
+  420.00000n    5.0000     1.3737  
+  430.00000n    5.0000     1.3962  
+  440.00000n    5.0000     1.4187  
+  450.00000n    5.0000     1.4412  
+  460.00000n    5.0000     1.4637  
+  470.00000n    5.0000     1.4862  
+  480.00000n    5.0000     1.5055  
+  490.00000n    5.0000     1.5246  
+  500.00000n    5.0000     1.5437  
+  510.00000n    5.0000     1.5629  
+  520.00000n    5.0000     1.5820  
+  530.00000n    5.0000     1.6011  
+  540.00000n    2.5000     1.5942  
+  550.00000n    0.         1.5750  
+  560.00000n    0.         1.5439  
+  570.00000n    0.         1.5135  
+  580.00000n    0.         1.4840  
+  590.00000n    0.         1.4546  
+  600.00000n    0.         1.4252  
+  610.00000n    0.         1.3989  
+  620.00000n    0.         1.3731  
+  630.00000n    0.         1.3472  
+  640.00000n    0.         1.3214  
+  650.00000n    0.         1.2955  
+  660.00000n    0.         1.2697  
+  670.00000n    0.         1.2439  
+  680.00000n    0.         1.2180  
+  690.00000n    0.         1.1922  
+  700.00000n    0.         1.1663  
+  710.00000n    0.         1.1446  
+  720.00000n    0.         1.1234  
+  730.00000n    0.         1.1023  
+  740.00000n    0.         1.0811  
+  750.00000n    0.         1.0600  
+  760.00000n    0.         1.0388  
+  770.00000n    0.         1.0177  
+  780.00000n    0.       996.5533m 
+  790.00000n    0.       975.4106m 
+  800.00000n    0.       954.2678m 
+  810.00000n    0.       936.4521m 
+  820.00000n    0.       919.1535m 
+  830.00000n    0.       901.8549m 
+  840.00000n    0.       884.5563m 
+  850.00000n    0.       867.2577m 
+  860.00000n    0.       849.9591m 
+  870.00000n    0.       832.6604m 
+  880.00000n    0.       815.3618m 
+  890.00000n    0.       798.0632m 
+  900.00000n    0.       780.7646m 
+  910.00000n    0.       766.1881m 
+  920.00000n    0.       752.0347m 
+  930.00000n    0.       737.8813m 
+  940.00000n    0.       723.7279m 
+  950.00000n    0.       709.5745m 
+  960.00000n    0.       695.4210m 
+  970.00000n    0.       681.2676m 
+  980.00000n    0.       667.1142m 
+  990.00000n    0.       652.9608m 
+    1.00000u    0.       638.8074m 
+    1.01000u    0.       626.8812m 
+    1.02000u    0.       615.3011m 
+    1.03000u    0.       603.7210m 
+    1.04000u    0.       592.1410m 
+    1.05000u    0.       580.5609m 
+    1.06000u    0.       568.9809m 
+    1.07000u    0.       557.4008m 
+    1.08000u    0.       545.8207m 
+    1.09000u    0.       534.2407m 
+    1.10000u    0.       522.6606m 
+    1.11000u    0.       512.9028m 
+    1.12000u    0.       503.4282m 
+    1.13000u    0.       493.9536m 
+    1.14000u    0.       484.4790m 
+    1.15000u    0.       475.0044m 
+    1.16000u    0.       465.5298m 
+    1.17000u    0.       456.0552m 
+    1.18000u    0.       446.5806m 
+    1.19000u    0.       437.1060m 
+    1.20000u    0.       427.6314m 
+    1.21000u    0.       419.6477m 
+    1.22000u    0.       411.8958m 
+    1.23000u    0.       404.1438m 
+    1.24000u    0.       396.3919m 
+    1.25000u    0.       388.6400m 
+    1.26000u    0.       380.8880m 
+    1.27000u    0.       373.1361m 
+    1.28000u    0.       365.3841m 
+    1.29000u    0.       357.6322m 
+    1.30000u    0.       349.8802m 
+    1.31000u    0.       343.3481m 
+    1.32000u    0.       337.0056m 
+    1.33000u    0.       330.6631m 
+    1.34000u    0.       324.3206m 
+    1.35000u    0.       317.9781m 
+    1.36000u    0.       311.6356m 
+    1.37000u    0.       305.2931m 
+    1.38000u    0.       298.9506m 
+    1.39000u    0.       292.6081m 
+    1.40000u    0.       286.2656m 
+    1.41000u    0.       280.9212m 
+    1.42000u    0.       275.7319m 
+    1.43000u    0.       270.5426m 
+    1.44000u    0.       265.3533m 
+    1.45000u    0.       260.1639m 
+    1.46000u    0.       254.9746m 
+    1.47000u    0.       249.7853m 
+    1.48000u    0.       244.5960m 
+    1.49000u    0.       239.4067m 
+    1.50000u    0.       234.2173m 
+    1.51000u    0.       229.8446m 
+    1.52000u    0.       225.5988m 
+    1.53000u    0.       221.3530m 
+    1.54000u    0.       217.1072m 
+    1.55000u    0.       212.8614m 
+    1.56000u    0.       208.6156m 
+    1.57000u    0.       204.3698m 
+    1.58000u    0.       200.1240m 
+    1.59000u    0.       195.8782m 
+    1.60000u    0.       191.6324m 
+    1.61000u    0.       188.0547m 
+    1.62000u    0.       184.5809m 
+    1.63000u    0.       181.1070m 
+    1.64000u    0.       177.6332m 
+    1.65000u    0.       174.1593m 
+    1.66000u    0.       170.6855m 
+    1.67000u    0.       167.2116m 
+    1.68000u    0.       163.7378m 
+    1.69000u    0.       160.2640m 
+    1.70000u    0.       156.7901m 
+    1.71000u    0.       153.8629m 
+    1.72000u    0.       151.0207m 
+    1.73000u    0.       148.1785m 
+    1.74000u    0.       145.3362m 
+    1.75000u    0.       142.4940m 
+    1.76000u    0.       139.6518m 
+    1.77000u    0.       136.8095m 
+    1.78000u    0.       133.9673m 
+    1.79000u    0.       131.1251m 
+    1.80000u    0.       128.2828m 
+    1.81000u    0.       125.8879m 
+    1.82000u    0.       123.5624m 
+    1.83000u    0.       121.2369m 
+    1.84000u    0.       118.9115m 
+    1.85000u    0.       116.5860m 
+    1.86000u    0.       114.2605m 
+    1.87000u    0.       111.9351m 
+    1.88000u    0.       109.6096m 
+    1.89000u    0.       107.2841m 
+    1.90000u    0.       104.9587m 
+    1.91000u    0.       102.9971m 
+    1.92000u    0.       101.0922m 
+    1.93000u    0.        99.1872m 
+    1.94000u    0.        97.2822m 
+    1.95000u    0.        95.3772m 
+    1.96000u    0.        93.4722m 
+    1.97000u    0.        91.5672m 
+    1.98000u    0.        89.6623m 
+    1.99000u    0.        87.7573m 
+    2.00000u    0.        85.8523m 
+y
+
+          ***** job concluded
+ ******  
+ lab3.sp
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz
+ cpu MHz	: 2600.000
+ CPU(s)		: 40
+  
+ OS:
+ Linux version 3.10.0-1160.102.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Tue Oct 17 15:42:21 UTC 2023
+
+ System loadavg : 15.28 15.42 15.46 18/1735 7868
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       3 # elements   =       4
+  # resistors   =       2 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           1
+  transient          0.00         201          86          43 rev=         3
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        531.41 megabytes
+           total cpu time            0.02 seconds
+           total elapsed time        0.07 seconds
+           job started at     18:12:26 05/26/2026
+           job ended   at     18:12:26 05/26/2026
+
+>info:         ***** hspice job concluded
+           job total runtime         0.07 seconds
+
+
+ lic: Release primesim token(s) 
+ lic: total license checkout elapse time:        0.05(s)

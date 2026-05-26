@@ -1,0 +1,61 @@
+****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+Input File: lab7.sp
+lic:
+lic: FLEXlm: SDK_12.11.9.5
+lic: USER:   mario                HOSTNAME: mario
+lic: HOSTID: ffffffff91736e9d     PID:      8056
+lic: Using FLEXlm license files:
+lic: 27020@115.145.157.110:27021@115.145.157.110
+lic: Unable to checkout (hspice)
+lic:
+lic: Using FLEXlm license file:
+lic: 27021@115.145.157.110
+lic: Checkout 1 primesim
+lic: License/Maintenance for primesim will expire on 12-apr-2027/2026.03
+lic: 4(in_use)/30(total) FLOATING license(s) on SERVER 27021@115.145.157.110
+lic:
+
+ init: begin read circuit files, cpu clock= 5.67E-02
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/ad
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/behave
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/bjt
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/burr_brn
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/comlinear
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/dio
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/fet
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/lin_tech
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/pci
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/signet
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/ti
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/tline
+       option search = /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/parts/xilinx
+       option list
+       option post
+       option node
+ init: end read circuit files, cpu clock= 5.75E-02 peak memory=     531 mb
+ init: begin check errors, cpu clock= 5.75E-02
+ init: end check errors, cpu clock= 5.97E-02 peak memory=     531 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 5.97E-02
+       establish matrix -- done, cpu clock= 5.98E-02 peak memory=     531 mb
+       re-order matrix -- done, cpu clock= 5.99E-02 peak memory=     531 mb
+ init: end setup matrix, cpu clock= 6.01E-02 peak memory=     531 mb
+ output: lab7.sw
+ sweep: dc dc0    begin, #sweeps=  11 cpu clock= 6.03E-02
+ sweep: dc dc0    end, cpu clock= 6.10E-02 peak memory=     531 mb
+ dcop: begin dcop, cpu clock= 6.12E-02
+ dcop: end dcop, cpu clock= 6.15E-02 peak memory=     531 mb tot_iter=       3
+ output: lab7.tr
+ sweep: tran tran0    begin, stop_t=  2.00E-08 #sweeps= 101 cpu clock= 6.20E-02
+ tran: time= 2.0000E-09 tot_iter=      10 conv_iter=       5 cpu clock= 6.22E-02
+ tran: time= 4.5041E-09 tot_iter=      53 conv_iter=      21 cpu clock= 6.24E-02
+ tran: time= 6.5041E-09 tot_iter=      57 conv_iter=      23 cpu clock= 6.24E-02
+ tran: time= 8.0000E-09 tot_iter=      61 conv_iter=      25 cpu clock= 6.24E-02
+ tran: time= 1.0127E-08 tot_iter=     103 conv_iter=      39 cpu clock= 6.26E-02
+ tran: time= 1.2917E-08 tot_iter=     109 conv_iter=      42 cpu clock= 6.26E-02
+ tran: time= 1.4917E-08 tot_iter=     113 conv_iter=      44 cpu clock= 6.27E-02
+ tran: time= 1.6917E-08 tot_iter=     117 conv_iter=      46 cpu clock= 6.27E-02
+ tran: time= 1.8917E-08 tot_iter=     121 conv_iter=      48 cpu clock= 6.27E-02
+ tran: time= 2.0000E-08 tot_iter=     123 conv_iter=      49 cpu clock= 6.27E-02
+ sweep: tran tran0    end, cpu clock= 6.27E-02 peak memory=     531 mb
+>info:         ***** hspice job concluded
+ lic: Release primesim token(s)

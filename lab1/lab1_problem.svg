@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1194" height="744" viewBox="0 0 1194 744">
+  <rect width="1194" height="744" fill="#fff"/>
+  <rect x="15" y="20" width="1086" height="52" fill="#ffff8a"/>
+  <text x="30" y="57" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    * 실습문제 1. 수동소자인 저항으로 이루어진 회로의 동작점(노드전압) 구하기
+  </text>
+
+  <text x="45" y="154" font-family="Times New Roman, serif" font-size="32" fill="#111">
+    <tspan x="45" dy="0">Create a netlist nemed “lab1.sp” which describes the circuit shown at figure.</tspan>
+    <tspan x="45" dy="34">Use LIST, POST, NODE as options, and Request an operating point be calculated.</tspan>
+  </text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M244 265 L344 265"/>
+    <path d="M350 265 L458 266"/>
+    <path d="M244 265 L244 354"/>
+    <path d="M244 404 L244 529"/>
+    <path d="M244 529 L352 529"/>
+    <path d="M352 529 L458 530"/>
+    <path d="M458 266 L458 323"/>
+    <path d="M458 359 L458 433"/>
+    <path d="M458 469 L458 530"/>
+  </g>
+
+  <circle cx="344" cy="265" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="352" cy="527" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+
+  <text x="340" y="239" font-family="Times New Roman, serif" font-size="31" fill="#000">1</text>
+  <text x="338" y="508" font-family="Times New Roman, serif" font-size="31" fill="#000">0</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="243" cy="379" r="24"/>
+  </g>
+  <text x="235" y="377" font-family="Arial, sans-serif" font-size="27" font-weight="600" fill="#000">+</text>
+  <text x="236" y="397" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#000">−</text>
+  <text x="166" y="394" font-family="Times New Roman, serif" font-size="32" fill="#000">
+    V<tspan baseline-shift="sub" font-size="20">i</tspan>
+  </text>
+  <text x="139" y="439" font-family="Times New Roman, serif" font-size="32" fill="#000">10 V</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <polyline points="458,323 448,330 468,339 448,348 468,357 458,364"/>
+    <polyline points="458,433 448,440 468,449 448,458 468,467 458,474"/>
+  </g>
+  <text x="480" y="351" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R1</text>
+  <text x="528" y="381" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+  <text x="478" y="457" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R2</text>
+  <text x="528" y="463" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <path d="M352 529 L352 576"/>
+    <path d="M331 576 L373 576"/>
+    <path d="M337 585 L367 585"/>
+    <path d="M344 594 L360 594"/>
+  </g>
+
+  <text x="68" y="649" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    Run HSPICE, eg. Hspice lab1.sp &gt;\! Lab1.lis
+  </text>
+  <text x="68" y="697" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    Review the output file (lab1.lis ) and Search for “operating”
+  </text>
+</svg>

@@ -1,0 +1,581 @@
+Using: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab7.sp
+ ****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: lab7.sp                                                           
+  Command line options: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab7.sp
+  Start time: Tue May 26 20:03:25 2026
+ lic:  
+ lic: FLEXlm: SDK_12.11.9.5 
+ lic: USER:   mario                HOSTNAME: mario 
+ lic: HOSTID: ffffffff91736e9d     PID:      8056 
+ lic: Using FLEXlm license files: 
+ lic: 27020@115.145.157.110:27021@115.145.157.110 
+ lic: Unable to checkout (hspice) 
+ lic:   
+ lic: Using FLEXlm license file: 
+ lic: 27021@115.145.157.110 
+ lic: Checkout 1 primesim 
+ lic: License/Maintenance for primesim will expire on 12-apr-2027/2026.03 
+ lic: 4(in_use)/30(total) FLOATING license(s) on SERVER 27021@115.145.157.110 
+ lic:   
+ scientific notation:
+ a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
+ m=10**-3   k=10**3    x=10**6    g=10**9 
+
+
+ circuit parameter definitions
+  parameter          =  value 
+
+
+
+
+
+ constants  - tnom         kt           vt           gapsi        ni
+            298.15000    4.1163e-21    25.69184m     1.11562    1.2565e+16 
+1****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+ ******  
+ lab7.sp
+
+ ****** mos   model parameters tnom=  25.000 temp=  25.000 ******
+ Model file: lab7.sp
+ Model line:            6
+ ***************************************************************************
+ *** common model parameters  model name:   0:nch      model type:nmos   ***
+ ***************************************************************************
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** geometry parameters ***
+       ld=   0.    meters      lmlt=   1.00                wd=   0.    meters 
+     wmlt=   1.00                xl=   0.    meters        xw=   0.    meters 
+     lref=   0.    meters      wref=   0.    meters      lref=   0.    meters 
+     wref=   0.    meters     xlref=   0.    meters     xwref=   0.    meters 
+     lmin=   0.    meters      wmin=   0.    meters      lmax=   0.    meters 
+     wmax=   0.    meters 
+
+   2*** threshold voltage parameters ***
+      vto= 210.52m volts        nss=   0.    1/cm**2      tpg=   1.00         
+      phi= 700.00m volts      gamma= 500.00m v**0.5      bulk=  gnd           
+    ngate=   0.    cm**3       nsub=   0.    1/cm**3   delvto=   0.    volts  
+
+   3*** gate overlap capacitance parameters ***
+     cgbo=   0.    f/meter     cgdo=   0.    f/meter     cgso=   0.    f/meter
+     meto=   0.    meters 
+
+   4*** gate capacitance parameters ***
+    capop=  13.00               cf1=   0.    volts        cf2= 100.00m volts  
+      cf3=   1.00  volts        cf4=  50.00               cf5= 666.67m        
+      cf6= 500.00               xqc= 500.00m              tox=  20.00n meters 
+      cox=   1.73m f/m**2 
+
+   5*** diffusion parasitic parameters ***
+      acm=   0.                  is=  10.00f amps          js=   0.    a/m**2 
+      jsw=   0.    amp/m        nds=   1.00               cbd=   0.    farad  
+      cbs=   0.    farad         cj=  45.00u f/m**2      cjsw=   0.    f/m    
+   cjgate=   0.    f/m           mj= 500.00m             mjsw= 330.00m        
+       pb= 800.00m volts        php= 800.00m volts         tt=   0.    secs   
+     hdif=   0.    meters      ldif=   0.    meters        rd=   0.    ohms   
+       rs=   0.    ohms         rsh=   0.    ohms/sq       fc=   0.           
+    alpha=   0.                 vcr=   0.    volts      iirat=   0.           
+      rdc=   0.    ohms         rsc=   0.    ohms           n=   1.00         
+     vnds=  -1.00  volts  
+
+   6*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                  eg=   1.11  ev     
+     gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.           
+      bex=  -1.50               tcv=   0.    v/deg k      trd=   0.    /deg   
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+
+   7*** noise parameters ***
+       kf=   0.                  af=   1.00              nlev=   2.00         
+   gdsnoi=   1.00         
+
+ *** level 13 bsim model parameters     model name:   0:nch     model type:nmos   ***
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+    1*** transistor process parameters ***
+   format=   0.                vfb0=-300.00m volts       lvfb=   0.    v*um   
+     wvfb=   0.    v*um        phi0= 700.00m volts       lphi=   0.    v*um   
+     wphi=   0.    v*um          k1= 500.00m v**0.5       lk1=   0.    @0.5*um
+      wk1=   0.    @0.5*um       k2=   0.                 lk2=   0.    umeter 
+      wk2=   0.    umeter      eta0=   0.                leta=   0.    umeter 
+     weta=   0.    umeter       muz= 600.00 cm**2/vs      dl0=   0.    umeter 
+      dw0=   0.    umeter       u00=   0.    /v           lu0=   0.    um/v   
+      wu0=   0.    um/v          u1=   0.    um/v         lu1=   0.    um**2/v
+      wu1=   0.    um**2/v      x2m=   0.    note1       lx2m=   0.    note2  
+     wx2m=   0.    note2        x2e=   0.    /v          lx2e=   0.    um/v   
+     wx2e=   0.    um/v         x3e=   0.    /v          lx3e=   0.    um/v   
+     wx3e=   0.    um/v        x2u0=   0.    1/v**2     lx2u0=   0.    um/v**2
+    wx2u0=   0.    um/v**2     x2u1=   0.    um/v**2    lx2u1=   0.    um**2/@
+    wx2u1=   0.    um**2/@      mus= 600.00 cm**2/vs      lms=   0.    note3  
+      wms=   0.    note3       lmuz=   0.    note3       wmuz=   0.    note3  
+     x3ms=   5.00  note1      lx3ms=   0.    note2      wx3ms=   0.    note2  
+     x2ms=   0.    note1      lx2ms=   0.    note2      wx2ms=   0.    note2  
+     x3u1=   0.    um/v**2    lx3u1=   0.    um**2/@    wx3u1=   0.    um**2/@
+     toxm=  20.00m umeter      tref=  25.00  deg c       vddm=   5.00  volts  
+    cgdo=    1.50n f/m        cgso=    1.50n f/m        cgbo=  200.00p f/m    
+    xpart=   1.00              dum1=   0.                dum2=   0.           
+       n0= 500.00m              ln0=   0.    um           wn0=   0.    um     
+      nb0=   0.    1/v          lnb=   0.    um/v         wnb=   0.    um/v   
+      nd0=   0.    1/v          lnd=   0.    um/v         wnd=   0.    um/v   
+    k2lim=   0.             version=  96.20         
+
+  ### note1  represents   cm**2/v**2-sec   ###
+
+  ### note2  represents   cm**2*um/v**2-sec  ###
+
+  ### @      represents   v**   ###
+
+  ### note3  represents   cm**2*um/v-sec  ###
+
+    2*** diffusion layer process parameters ***
+     rshm=   0.    ohms/sq      cjm=  45.00u f/m**2       cjw=   0.    f/m    
+      ijs=   0.    amp/m         pj= 800.00m volts        pjw= 800.00m volts  
+      mj0= 500.00m              mjw= 330.00m              wdf=   0.    meters 
+       ds=   0.    meters 
+
+    3*** temperature coefficient parameters ***
+      tcv=   0.    meters      ltcv=   0.    meters      wtcv=   0.    meters 
+      bex=  -1.50  meters      lbex=   0.    meters      wbex=   0.    meters 
+      fex=   0.    meters      lfex=   0.    meters      wfex=   0.    meters 
+      trs=   0.    meters      ltrs=   0.    meters      wtrs=   0.    meters 
+      trd=   0.    meters      ltrd=   0.    meters      wtrd=   0.    meters 
+ Model file: lab7.sp
+ Model line:            8
+ ***************************************************************************
+ *** common model parameters  model name:   0:pch      model type:pmos   ***
+ ***************************************************************************
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** geometry parameters ***
+       ld=   0.    meters      lmlt=   1.00                wd=   0.    meters 
+     wmlt=   1.00                xl=   0.    meters        xw=   0.    meters 
+     lref=   0.    meters      wref=   0.    meters      lref=   0.    meters 
+     wref=   0.    meters     xlref=   0.    meters     xwref=   0.    meters 
+     lmin=   0.    meters      wmin=   0.    meters      lmax=   0.    meters 
+     wmax=   0.    meters 
+
+   2*** threshold voltage parameters ***
+      vto=-210.52m volts        nss=   0.    1/cm**2      tpg=   1.00         
+      phi= 700.00m volts      gamma= 500.00m v**0.5      bulk=  gnd           
+    ngate=   0.    cm**3       nsub=   0.    1/cm**3   delvto=   0.    volts  
+
+   3*** gate overlap capacitance parameters ***
+     cgbo=   0.    f/meter     cgdo=   0.    f/meter     cgso=   0.    f/meter
+     meto=   0.    meters 
+
+   4*** gate capacitance parameters ***
+    capop=  13.00               cf1=   0.    volts        cf2= 100.00m volts  
+      cf3=   1.00  volts        cf4=  50.00               cf5= 666.67m        
+      cf6= 500.00               xqc= 500.00m              tox=  20.00n meters 
+      cox=   1.73m f/m**2 
+
+   5*** diffusion parasitic parameters ***
+      acm=   0.                  is=  10.00f amps          js=   0.    a/m**2 
+      jsw=   0.    amp/m        nds=   1.00               cbd=   0.    farad  
+      cbs=   0.    farad         cj=  45.00u f/m**2      cjsw=   0.    f/m    
+   cjgate=   0.    f/m           mj= 500.00m             mjsw= 330.00m        
+       pb= 800.00m volts        php= 800.00m volts         tt=   0.    secs   
+     hdif=   0.    meters      ldif=   0.    meters        rd=   0.    ohms   
+       rs=   0.    ohms         rsh=   0.    ohms/sq       fc=   0.           
+    alpha=   0.                 vcr=   0.    volts      iirat=   0.           
+      rdc=   0.    ohms         rsc=   0.    ohms           n=   1.00         
+     vnds=  -1.00  volts  
+
+   6*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                  eg=   1.11  ev     
+     gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.           
+      bex=  -1.50               tcv=   0.    v/deg k      trd=   0.    /deg   
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+
+   7*** noise parameters ***
+       kf=   0.                  af=   1.00              nlev=   2.00         
+   gdsnoi=   1.00         
+
+ *** level 13 bsim model parameters     model name:   0:pch     model type:pmos   ***
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+    1*** transistor process parameters ***
+   format=   0.                vfb0=-300.00m volts       lvfb=   0.    v*um   
+     wvfb=   0.    v*um        phi0= 700.00m volts       lphi=   0.    v*um   
+     wphi=   0.    v*um          k1= 500.00m v**0.5       lk1=   0.    @0.5*um
+      wk1=   0.    @0.5*um       k2=   0.                 lk2=   0.    umeter 
+      wk2=   0.    umeter      eta0=   0.                leta=   0.    umeter 
+     weta=   0.    umeter       muz= 600.00 cm**2/vs      dl0=   0.    umeter 
+      dw0=   0.    umeter       u00=   0.    /v           lu0=   0.    um/v   
+      wu0=   0.    um/v          u1=   0.    um/v         lu1=   0.    um**2/v
+      wu1=   0.    um**2/v      x2m=   0.    note1       lx2m=   0.    note2  
+     wx2m=   0.    note2        x2e=   0.    /v          lx2e=   0.    um/v   
+     wx2e=   0.    um/v         x3e=   0.    /v          lx3e=   0.    um/v   
+     wx3e=   0.    um/v        x2u0=   0.    1/v**2     lx2u0=   0.    um/v**2
+    wx2u0=   0.    um/v**2     x2u1=   0.    um/v**2    lx2u1=   0.    um**2/@
+    wx2u1=   0.    um**2/@      mus= 600.00 cm**2/vs      lms=   0.    note3  
+      wms=   0.    note3       lmuz=   0.    note3       wmuz=   0.    note3  
+     x3ms=   5.00  note1      lx3ms=   0.    note2      wx3ms=   0.    note2  
+     x2ms=   0.    note1      lx2ms=   0.    note2      wx2ms=   0.    note2  
+     x3u1=   0.    um/v**2    lx3u1=   0.    um**2/@    wx3u1=   0.    um**2/@
+     toxm=  20.00m umeter      tref=  25.00  deg c       vddm=   5.00  volts  
+    cgdo=    1.50n f/m        cgso=    1.50n f/m        cgbo=  200.00p f/m    
+    xpart=   1.00              dum1=   0.                dum2=   0.           
+       n0= 500.00m              ln0=   0.    um           wn0=   0.    um     
+      nb0=   0.    1/v          lnb=   0.    um/v         wnb=   0.    um/v   
+      nd0=   0.    1/v          lnd=   0.    um/v         wnd=   0.    um/v   
+    k2lim=   0.             version=  96.20         
+
+  ### note1  represents   cm**2/v**2-sec   ###
+
+  ### note2  represents   cm**2*um/v**2-sec  ###
+
+  ### @      represents   v**   ###
+
+  ### note3  represents   cm**2*um/v-sec  ###
+
+    2*** diffusion layer process parameters ***
+     rshm=   0.    ohms/sq      cjm=  45.00u f/m**2       cjw=   0.    f/m    
+      ijs=   0.    amp/m         pj= 800.00m volts        pjw= 800.00m volts  
+      mj0= 500.00m              mjw= 330.00m              wdf=   0.    meters 
+       ds=   0.    meters 
+
+    3*** temperature coefficient parameters ***
+      tcv=   0.    meters      ltcv=   0.    meters      wtcv=   0.    meters 
+      bex=  -1.50  meters      lbex=   0.    meters      wbex=   0.    meters 
+      fex=   0.    meters      lfex=   0.    meters      wfex=   0.    meters 
+      trs=   0.    meters      ltrs=   0.    meters      wtrs=   0.    meters 
+      trd=   0.    meters      ltrd=   0.    meters      wtrd=   0.    meters 
+  **info** (lab7.sp:3) DC voltage reset to initial transient source value in source 0:vi. new dc=0.2000D+00
+ ******  
+ lab7.sp
+
+ ****** circuit element summary tnom=  25.000 temp=  25.000 ******
+
+
+ **** capacitors
+  
+  
+                             
+ element name        0:c1    
+ node1               0:out   
+ node2               0:0     
+ model                       
+ cap eff           750.0000f 
+ tc1                 0.      
+ tc2                 0.      
+ scale               1.0000  
+ ic                  0.      
+ m                   1.0000  
+ w                   0.      
+ l                   0.      
+ temp               25.0000  
+
+
+ **** independent sources
+
+     name         node1        node2      dc volt    ac mag    ac phase    type
+  vdd  vdd               0                    5.0000     0.         0.      dc   
+  vi  in                0                  200.0000m    0.         0.      pulse
+             initial value   200.0000m
+             pulsed value.     4.8000 
+             delay time...     2.0000n
+             risetime.....     1.0000n
+             falltime.....     1.0000n
+             width........     5.0000n
+             period.......    20.0000n
+
+
+
+ **** mosfets
+  
+  
+                                        
+ element name        0:mp1      0:mn1   
+ drain               0:out      0:out   
+ gate                0:in       0:in    
+ source              0:vdd      0:0     
+ bulk                0:vdd      0:0     
+ model               0:pch      0:nch   
+ w eff              20.0000u   20.0000u 
+ l eff               1.0000u    1.0000u 
+ rd eff              0.         0.      
+ rs eff              0.         0.      
+ cdsat              10.0000f   10.0000f 
+ cssat              10.0000f   10.0000f 
+ capbd               0.         0.      
+ capbs               0.         0.      
+ temp               25.0000    25.0000  
+ aic                                    
+ m                   1.0000     1.0000  
+ w drawn            20.0000u   20.0000u 
+ l drawn             1.0000u    1.0000u 
+  
+  
+ ******  
+ lab7.sp
+
+ ****** element node table
+                                                                                      
+ 0                c1               vdd              vi               mn1:s            
+                  mn1:b                                                               
+ in               vi               mp1:g            mn1:g                             
+ out              c1               mp1:d            mn1:d                             
+ vdd              vdd              mp1:s            mp1:b                             
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+ ******
+ lab7.sp
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+x
+
+ volt         voltage    voltage   
+             out        in         
+    0.          5.0000     0.      
+  500.00000m    5.0000   500.0000m 
+    1.00000     4.9947     1.0000  
+    1.50000     4.9231     1.5000  
+    2.00000     4.6970     2.0000  
+    2.50000     2.5000     2.5000  
+    3.00000   303.0336m    3.0000  
+    3.50000    76.8559m    3.5000  
+    4.00000     5.2881m    4.0000  
+    4.50000     1.2774n    4.5000  
+    5.00000     1.1288n    5.0000  
+y
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ lab7.sp
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:in      = 200.0000m 0:out     =   5.0000  0:vdd     =   5.0000 
+
+
+ **** voltage sources
+
+ subckt                        
+ element  0:vdd      0:vi      
+  volts      5.0000   200.0000m
+  current  -10.0500p    0.     
+  power     50.2500p    0.     
+
+     total voltage source power dissipation=   50.2500p       watts
+
+
+
+
+ **** mosfets
+
+
+ subckt                        
+ element  0:mp1      0:mn1     
+ model    0:pch      0:nch     
+ region   Linear     Cutoff    
+  id       -10.0500p    0.     
+  ibs        0.         0.     
+  ibd      1.184e-23  -50.0000f
+  vgs       -4.8000   200.0000m
+  vds       -1.1839n    5.0000 
+  vbs        0.         0.     
+  vth     -818.3300m  818.3300m
+  vdsat     -3.4016     0.     
+  vod       -3.9817  -618.3300m
+  beta       2.0719m    2.0719m
+  gam eff  500.0000m  500.0000m
+  gm         2.4528p    0.     
+  gds        8.4891m    0.     
+  gmb      732.9267f    0.     
+  cdtot     30.3152f    0.     
+  cgtot     34.5314f   11.5105f
+  cstot     32.5299f    0.     
+  cbtot     10.3182f   11.5105f
+  cgs       17.2657f    0.     
+  cgd       17.2657f    0.     
+
+
+
+ ******
+ lab7.sp
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+x
+
+ time         voltage    voltage   
+             out        in         
+    0.          5.0000   200.0000m 
+  200.00000p    5.0000   200.0000m 
+  400.00000p    5.0000   200.0000m 
+  600.00000p    5.0000   200.0000m 
+  800.00000p    5.0000   200.0000m 
+    1.00000n    5.0000   200.0000m 
+    1.20000n    5.0000   200.0000m 
+    1.40000n    5.0000   200.0000m 
+    1.60000n    5.0000   200.0000m 
+    1.80000n    5.0000   200.0000m 
+    2.00000n    5.0000   200.0000m 
+    2.20000n    4.9947     1.1200  
+    2.40000n    4.7817     2.0400  
+    2.60000n    4.1913     2.9600  
+    2.80000n    2.7460     3.8800  
+    3.00000n  862.0756m    4.8000  
+    3.20000n  132.7914m    4.8000  
+    3.40000n   11.5909m    4.8000  
+    3.60000n  555.3166u    4.8000  
+    3.80000n   -2.9482u    4.8000  
+    4.00000n   42.5753u    4.8000  
+    4.20000n   15.9599u    4.8000  
+    4.40000n  -10.6554u    4.8000  
+    4.60000n  -20.5402u    4.8000  
+    4.80000n  -12.2771u    4.8000  
+    5.00000n   -4.0140u    4.8000  
+    5.20000n    4.2491u    4.8000  
+    5.40000n   12.5122u    4.8000  
+    5.60000n   14.0872u    4.8000  
+    5.80000n    8.4076u    4.8000  
+    6.00000n    2.7279u    4.8000  
+    6.20000n   -2.9517u    4.8000  
+    6.40000n   -8.6314u    4.8000  
+    6.60000n   -9.7085u    4.8000  
+    6.80000n   -5.7932u    4.8000  
+    7.00000n   -1.8779u    4.8000  
+    7.20000n    2.0374u    4.8000  
+    7.40000n    5.9526u    4.8000  
+    7.60000n    5.7350u    4.8000  
+    7.80000n    1.0344u    4.8000  
+    8.00000n   -3.6662u    4.8000  
+    8.20000n    1.1658m    3.8800  
+    8.40000n  251.0749m    2.9600  
+    8.60000n  792.1395m    2.0400  
+    8.80000n    2.1862     1.1200  
+    9.00000n    4.1728   200.0000m 
+    9.20000n    4.8312   200.0000m 
+    9.40000n    4.9877   200.0000m 
+    9.60000n    4.9997   200.0000m 
+    9.80000n    5.0000   200.0000m 
+   10.00000n    5.0000   200.0000m 
+   10.20000n    5.0000   200.0000m 
+   10.40000n    5.0000   200.0000m 
+   10.60000n    5.0000   200.0000m 
+   10.80000n    5.0000   200.0000m 
+   11.00000n    5.0000   200.0000m 
+   11.20000n    5.0000   200.0000m 
+   11.40000n    5.0000   200.0000m 
+   11.60000n    5.0000   200.0000m 
+   11.80000n    5.0000   200.0000m 
+   12.00000n    5.0000   200.0000m 
+   12.20000n    5.0000   200.0000m 
+   12.40000n    5.0000   200.0000m 
+   12.60000n    5.0000   200.0000m 
+   12.80000n    5.0000   200.0000m 
+   13.00000n    5.0000   200.0000m 
+   13.20000n    5.0000   200.0000m 
+   13.40000n    5.0000   200.0000m 
+   13.60000n    5.0000   200.0000m 
+   13.80000n    5.0000   200.0000m 
+   14.00000n    5.0000   200.0000m 
+   14.20000n    5.0000   200.0000m 
+   14.40000n    5.0000   200.0000m 
+   14.60000n    5.0000   200.0000m 
+   14.80000n    5.0000   200.0000m 
+   15.00000n    5.0000   200.0000m 
+   15.20000n    5.0000   200.0000m 
+   15.40000n    5.0000   200.0000m 
+   15.60000n    5.0000   200.0000m 
+   15.80000n    5.0000   200.0000m 
+   16.00000n    5.0000   200.0000m 
+   16.20000n    5.0000   200.0000m 
+   16.40000n    5.0000   200.0000m 
+   16.60000n    5.0000   200.0000m 
+   16.80000n    5.0000   200.0000m 
+   17.00000n    5.0000   200.0000m 
+   17.20000n    5.0000   200.0000m 
+   17.40000n    5.0000   200.0000m 
+   17.60000n    5.0000   200.0000m 
+   17.80000n    5.0000   200.0000m 
+   18.00000n    5.0000   200.0000m 
+   18.20000n    5.0000   200.0000m 
+   18.40000n    5.0000   200.0000m 
+   18.60000n    5.0000   200.0000m 
+   18.80000n    5.0000   200.0000m 
+   19.00000n    5.0000   200.0000m 
+   19.20000n    5.0000   200.0000m 
+   19.40000n    5.0000   200.0000m 
+   19.60000n    5.0000   200.0000m 
+   19.80000n    5.0000   200.0000m 
+   20.00000n    5.0000   200.0000m 
+y
+
+          ***** job concluded
+ ******  
+ lab7.sp
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz
+ cpu MHz	: 2600.000
+ CPU(s)		: 40
+  
+ OS:
+ Linux version 3.10.0-1160.102.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Tue Oct 17 15:42:21 UTC 2023
+
+ System loadavg : 16.95 16.71 16.39 19/1546 8091
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       4 # elements   =       5
+  # resistors   =       0 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       2
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       2 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           3
+  dc sweep           0.00          11          39
+  transient          0.00         101         125          50 rev=         3
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        531.66 megabytes
+           total cpu time            0.01 seconds
+           total elapsed time        0.07 seconds
+           job started at     20:03:25 05/26/2026
+           job ended   at     20:03:25 05/26/2026
+
+>info:         ***** hspice job concluded
+           job total runtime         0.07 seconds
+
+
+ lic: Release primesim token(s) 
+ lic: total license checkout elapse time:        0.05(s)

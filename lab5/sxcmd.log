@@ -1,0 +1,22 @@
+### Custom WaveView ADV log file, revision V-2023.12-SP1 (build Mar 01, ) ###
+### created at 19:02:18 on Tue May 26 2026 (Linux AMD64) ###
+### Host Name: mario   User ID: mario   PID: 23399   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+sx_open_sim_file_read {lab5.sw0}
+wv_move_window {Custom WaveView} {} 8 31
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:lab5.sw0(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:lab5.sw0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {i(d1)} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {i(d1)} 0
+wv_drag_list_item {Custom WaveView} {} {sigview} {i(d1)} 0
+wv_drag_enter WV1
+wv_drop_on WV1
+wv_move_window {Custom WaveView} {} -142 89
+wv_move_window {Custom WaveView} {} 0 23
+wv_close_window {Custom WaveView} 
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 

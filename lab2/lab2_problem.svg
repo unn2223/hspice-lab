@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1235" height="881" viewBox="0 0 1235 881">
+  <rect width="1235" height="881" fill="#fff"/>
+  <rect x="37" y="13" width="1034" height="90" fill="#ffff8a"/>
+  <text x="53" y="49" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    * 실습문제 2. 수동소자인 저항과 캐패시터으로 이루어진 회로의 동작점과
+  </text>
+  <text x="234" y="86" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    주파수 특성 구하기
+  </text>
+
+  <text x="52" y="166" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    <tspan x="52" dy="0">Create a netlist named “lab2.sp” which describes the circuit shown at figure.</tspan>
+    <tspan x="52" dy="33">Use LIST, POST, NODE as options, and request an operating point be calculated.</tspan>
+    <tspan x="52" dy="33">And request an ac sweep 10 points per decade from 1kHz to 1MHz,</tspan>
+    <tspan x="52" dy="33">and a print the AC voltage at nodes 1 and 2, and the AC current through r2 and c1.</tspan>
+  </text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M310 353 L410 353"/>
+    <path d="M417 353 L524 353"/>
+    <path d="M310 353 L310 442"/>
+    <path d="M310 491 L310 617"/>
+    <path d="M310 617 L418 617"/>
+    <path d="M418 617 L522 617"/>
+    <path d="M522 617 L733 617"/>
+    <path d="M524 353 L524 410"/>
+    <path d="M524 446 L524 490"/>
+    <path d="M524 526 L524 617"/>
+    <path d="M524 489 L732 492"/>
+    <path d="M733 492 L733 548"/>
+    <path d="M733 570 L733 617"/>
+  </g>
+
+  <circle cx="410" cy="354" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="524" cy="489" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="419" cy="616" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+
+  <text x="421" y="345" font-family="Times New Roman, serif" font-size="31" fill="#000">1</text>
+  <text x="479" y="497" font-family="Times New Roman, serif" font-size="31" fill="#000">2</text>
+  <text x="405" y="597" font-family="Times New Roman, serif" font-size="31" fill="#000">0</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="309" cy="467" r="24"/>
+  </g>
+  <path d="M294 468 C300 458, 305 458, 310 468 C316 478, 322 478, 328 468" stroke="#000" stroke-width="3.5" fill="none"/>
+  <text x="317" y="436" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">+</text>
+  <text x="324" y="514" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">-</text>
+  <text x="234" y="481" font-family="Times New Roman, serif" font-size="32" fill="#000">
+    V<tspan baseline-shift="sub" font-size="20">i</tspan>
+  </text>
+  <text x="170" y="547" font-family="Times New Roman, serif" font-size="31" fill="#000">DC&#160;&#160;10 V</text>
+  <text x="170" y="593" font-family="Times New Roman, serif" font-size="31" fill="#000">AC&#160;&#160;1 V</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <polyline points="524,410 514,417 534,426 514,435 534,444 524,451"/>
+    <polyline points="524,490 514,497 534,506 514,515 534,524 524,531"/>
+  </g>
+  <text x="546" y="438" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R1</text>
+  <text x="594" y="469" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+  <text x="545" y="543" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">R2</text>
+  <text x="594" y="551" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">1KΩ</text>
+
+  <g stroke="#000" stroke-width="4" fill="none" stroke-linecap="square">
+    <path d="M721 548 L744 548"/>
+    <path d="M721 562 L744 562"/>
+  </g>
+  <text x="776" y="551" font-family="Times New Roman, serif" font-size="32" font-style="italic" fill="#000">C1</text>
+  <text x="766" y="592" font-family="Times New Roman, serif" font-size="31" fill="#000">0.001uF</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <path d="M419 616 L419 663"/>
+    <path d="M398 663 L440 663"/>
+    <path d="M404 672 L434 672"/>
+    <path d="M411 681 L427 681"/>
+  </g>
+
+  <text x="87" y="740" font-family="Times New Roman, serif" font-size="30" fill="#111">
+    <tspan x="87" dy="0">Run HSPICE, eg. Hspice lab2.sp &gt;\! Lab2.lis</tspan>
+    <tspan x="87" dy="33">Review the output file (lab2.lis ) and search for “ac analysis”.</tspan>
+    <tspan x="87" dy="33">After then, run awaves and call up lab1b.sp. Display the voltage at node 2.</tspan>
+    <tspan x="87" dy="33">Change the X axis to log.</tspan>
+  </text>
+</svg>

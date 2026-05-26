@@ -1,0 +1,215 @@
+Using: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab5.sp
+ ****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: lab5.sp                                                           
+  Command line options: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab5.sp
+  Start time: Tue May 26 19:02:04 2026
+ lic:  
+ lic: FLEXlm: SDK_12.11.9.5 
+ lic: USER:   mario                HOSTNAME: mario 
+ lic: HOSTID: ffffffff91736e9d     PID:      23084 
+ lic: Using FLEXlm license file: 
+ lic: 27021@115.145.157.110 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 12-apr-2027/2026.03 
+ lic: 5(in_use)/5(total) FLOATING license(s) on SERVER 27021@115.145.157.110 
+ lic:   
+ scientific notation:
+ a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
+ m=10**-3   k=10**3    x=10**6    g=10**9 
+
+
+ circuit parameter definitions
+  parameter          =  value 
+
+     0:dv                                                      =  -1.0000       
+
+
+
+
+ constants  - tnom         kt           vt           gapsi        ni
+            298.15000    4.1163e-21    25.69184m     1.11562    1.2565e+16 
+1****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+ ******  
+ lab5.sp
+
+ ****** diode model parameters tnom=  25.000 temp=  25.000 ******
+ ********************************************************
+ *** common model parameters model name:   0:df      ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is= 2.7e-16 amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ******  
+ lab5.sp
+
+ ****** circuit element summary tnom=  25.000 temp=  25.000 ******
+
+
+ **** independent sources
+
+     name         node1        node2      dc volt    ac mag    ac phase    type
+  vi  1                 0                   -1.0000     0.         0.      dc   
+
+
+ **** diodes
+
+  
+  
+                             
+ name                0:d1    
+ node +              0:1     
+ node -              0:0     
+ model               0:df    
+ res eff             0.      
+ cdsat eff         266.1500a 
+ capd eff            0.      
+ poly cap                    
+ metal cap                   
+ ic                          
+  
+ ******  
+ lab5.sp
+
+ ****** element node table
+                            
+ 0                vi d1:-   
+ 1                vi d1:+   
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ lab5.sp
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage
+
+ +0:1       =  -1.0000 
+
+
+ **** voltage sources
+
+ subckt             
+ element  0:vi      
+  volts     -1.0000 
+  current    1.0003p
+  power      1.0003p
+
+     total voltage source power dissipation=    1.0003p       watts
+
+
+
+ **** diodes
+
+
+ subckt             
+ element  0:d1      
+ model    0:df      
+  id      -266.1500a
+  vd        -1.0000 
+  req        0.     
+  cap        0.     
+
+
+
+
+          ***** job concluded
+ ******  
+ lab5.sp
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz
+ cpu MHz	: 2600.000
+ CPU(s)		: 40
+  
+ OS:
+ Linux version 3.10.0-1160.102.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Tue Oct 17 15:42:21 UTC 2023
+
+ System loadavg : 15.70 15.56 15.46 17/1718 23092
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       2 # elements   =       2
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
+  # curr_srcs   =       0 # diodes     =       1 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           3
+  dc sweep           0.02         401        1603
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        531.57 megabytes
+           total cpu time            0.02 seconds
+           total elapsed time        0.07 seconds
+           job started at     19:02:04 05/26/2026
+           job ended   at     19:02:04 05/26/2026
+
+>info:         ***** hspice job concluded
+           job total runtime         0.07 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.05(s)

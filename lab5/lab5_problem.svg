@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1328" height="914" viewBox="0 0 1328 914">
+  <rect width="1328" height="914" fill="#fff"/>
+  <rect x="23" y="11" width="1283" height="90" fill="#ffff8a"/>
+  <text x="40" y="48" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    실습문제 5. 능동소자인 <tspan font-family="Times New Roman, serif" font-weight="700">Diode</tspan>의 <tspan font-family="Times New Roman, serif" font-weight="700">device model</tspan>의 <tspan font-family="Times New Roman, serif" font-weight="700">rs</tspan>가 회로의 <tspan font-family="Times New Roman, serif" font-weight="700">DC</tspan> 특성에 미치는
+  </text>
+  <text x="227" y="85" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="31" font-weight="600" fill="#000">
+    영향을 <tspan font-family="Times New Roman, serif" font-weight="700">DC analysis</tspan>를 통하여 분석하기
+  </text>
+
+  <text x="61" y="164" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    <tspan x="61" dy="0">Create a netlist nemed “lab5.sp” which describes the circuit shown at figure.</tspan>
+    <tspan x="61" dy="33">Set Vi’s voltage to a variable, dv, and sweep dv from 800mV to 1V in 5mV steps.</tspan>
+    <tspan x="61" dy="33">And use following diode model.</tspan>
+    <tspan x="61" dy="33">( .model df d is = 2.6615e−16 rs = 0.0 )</tspan>
+    <tspan x="61" dy="33">Use LIST , POST, NODE as options, put in a print control for v(1) I(d1)</tspan>
+  </text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M434 381 L534 381"/>
+    <path d="M534 381 L645 381"/>
+    <path d="M434 381 L434 470"/>
+    <path d="M434 520 L434 645"/>
+    <path d="M434 645 L543 645"/>
+    <path d="M543 645 L645 645"/>
+    <path d="M645 381 L645 493"/>
+    <path d="M645 531 L645 645"/>
+  </g>
+
+  <circle cx="534" cy="382" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="543" cy="645" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+
+  <text x="529" y="367" font-family="Times New Roman, serif" font-size="31" fill="#000">1</text>
+  <text x="529" y="626" font-family="Times New Roman, serif" font-size="31" fill="#000">0</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="433" cy="495" r="24"/>
+  </g>
+  <text x="424" y="496" font-family="Arial, sans-serif" font-size="31" font-weight="600" fill="#000">+</text>
+  <text x="425" y="516" font-family="Arial, sans-serif" font-size="31" font-weight="600" fill="#000">−</text>
+  <text x="357" y="510" font-family="Times New Roman, serif" font-size="32" fill="#000">
+    V<tspan baseline-shift="sub" font-size="20">i</tspan>
+  </text>
+
+  <g fill="#000" stroke="#000" stroke-width="3" stroke-linejoin="round">
+    <polygon points="623,495 667,495 645,530"/>
+  </g>
+  <path d="M623 531 L667 531" stroke="#000" stroke-width="4" fill="none" stroke-linecap="square"/>
+  <text x="695" y="520" font-family="Times New Roman, serif" font-size="32" fill="#000">D1</text>
+  <text x="700" y="562" font-family="Times New Roman, serif" font-size="32" fill="#000">df</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <path d="M543 645 L543 693"/>
+    <path d="M522 693 L564 693"/>
+    <path d="M528 702 L558 702"/>
+    <path d="M535 711 L551 711"/>
+  </g>
+
+  <text x="74" y="766" font-family="Times New Roman, serif" font-size="29" fill="#111">
+    <tspan x="74" dy="0">Run HSPICE, eg. Hspice lab5.sp &gt;\! Lab5.lis</tspan>
+    <tspan x="74" dy="33">Review the output file ( vi lab5.lis ) and search for “dc transfer”.</tspan>
+    <tspan x="74" dy="33">After then, run awaves and call up lab1c.sp. Display I(d1) with dv as the x-axis.</tspan>
+    <tspan x="74" dy="33">You can see the unrealistic current spikes due to 0 ohm rs.</tspan>
+    <tspan x="74" dy="33">Change the rs of the diode to 0.01ohms in the model and do the same as above.</tspan>
+  </text>
+</svg>

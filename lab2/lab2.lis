@@ -1,0 +1,233 @@
+Using: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab2.sp
+ ****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+  Copyright (c) 1986 - 2026 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: lab2.sp                                                           
+  Command line options: /home/mario/synopsys/tool/hspice/V-2023.12-SP1/hspice/linux64/hspice lab2.sp
+  Start time: Tue May 26 18:01:44 2026
+ lic:  
+ lic: FLEXlm: SDK_12.11.9.5 
+ lic: USER:   mario                HOSTNAME: mario 
+ lic: HOSTID: ffffffff91736e9d     PID:      35734 
+ lic: Using FLEXlm license file: 
+ lic: 27021@115.145.157.110 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 12-apr-2027/2026.03 
+ lic: 4(in_use)/5(total) FLOATING license(s) on SERVER 27021@115.145.157.110 
+ lic:   
+ scientific notation:
+ a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
+ m=10**-3   k=10**3    x=10**6    g=10**9 
+
+
+ circuit parameter definitions
+  parameter          =  value 
+
+
+
+
+
+ constants  - tnom         kt           vt           gapsi        ni
+            298.15000    4.1163e-21    25.69184m     1.11562    1.2565e+16 
+1****** PrimeSim HSPICE -- V-2023.12-SP1 linux64 (Feb 29 2024 8764641) ******
+ ******  
+ lab2.sp
+
+ ****** circuit element summary tnom=  25.000 temp=  25.000 ******
+
+
+ **** resistors
+
+  
+  
+                                        
+ element name        0:r1       0:r2    
+ node1               0:1        0:2     
+ node2               0:2        0:0     
+ model                                  
+ res eff             1.0000k    1.0000k 
+ tc1                 0.         0.      
+ tc2                 0.         0.      
+ scale               1.0000     1.0000  
+ m                   1.0000     1.0000  
+ ac                  1.0000k    1.0000k 
+ temp               25.0000    25.0000  
+ l                   0.         0.      
+ w                   0.         0.      
+ cap                 0.         0.      
+ noise            1.000e+00  1.000e+00  
+
+
+ **** capacitors
+  
+  
+                             
+ element name        0:c1    
+ node1               0:2     
+ node2               0:0     
+ model                       
+ cap eff             1.0000n 
+ tc1                 0.      
+ tc2                 0.      
+ scale               1.0000  
+ ic                  0.      
+ m                   1.0000  
+ w                   0.      
+ l                   0.      
+ temp               25.0000  
+
+
+ **** independent sources
+
+     name         node1        node2      dc volt    ac mag    ac phase    type
+  vi  1                 0                   10.0000     1.0000     0.      dc   
+  
+ ******  
+ lab2.sp
+
+ ****** element node table
+                            
+ 0                r2 c1 vi  
+ 1                r1 vi     
+ 2                r1 r2 c1  
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+ **info** dc convergence successful at Newton-Raphson method 
+ ******  
+ lab2.sp
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage
+
+ +0:1       =  10.0000  0:2       =   5.0000 
+
+
+ **** voltage sources
+
+ subckt             
+ element  0:vi      
+  volts     10.0000 
+  current   -5.0000m
+  power     50.0000m
+
+     total voltage source power dissipation=   50.0000m       watts
+
+
+
+ **** resistors
+
+ subckt                        
+ element  0:r1       0:r2      
+  r value    1.0000k    1.0000k
+  v drop     5.0000     5.0000 
+  current    5.0000m    5.0000m
+  power     25.0000m   25.0000m
+
+ ******
+ lab2.sp
+
+ ****** ac analysis tnom=  25.000 temp=  25.000 ******
+x
+
+ freq         voltage    voltage    current    current   
+             1          2          r2         c1         
+    1.00000k    1.0000   499.9975m  499.9975u    3.1416u 
+    1.25893k    1.0000   499.9961m  499.9961u    3.9550u 
+    1.58489k    1.0000   499.9938m  499.9938u    4.9790u 
+    1.99526k    1.0000   499.9902m  499.9902u    6.2682u 
+    2.51189k    1.0000   499.9844m  499.9844u    7.8911u 
+    3.16228k    1.0000   499.9753m  499.9753u    9.9341u 
+    3.98107k    1.0000   499.9609m  499.9609u   12.5059u 
+    5.01187k    1.0000   499.9380m  499.9380u   15.7433u 
+    6.30957k    1.0000   499.9018m  499.9018u   19.8182u 
+    7.94328k    1.0000   499.8444m  499.8444u   24.9468u 
+   10.00000k    1.0000   499.7534m  499.7534u   31.4004u 
+   12.58925k    1.0000   499.6094m  499.6094u   39.5194u 
+   15.84893k    1.0000   499.3814m  499.3814u   49.7293u 
+   19.95262k    1.0000   499.0206m  499.0206u   62.5602u 
+   25.11886k    1.0000   498.4504m  498.4504u   78.6687u 
+   31.62278k    1.0000   497.5507m  497.5507u   98.8592u 
+   39.81072k    1.0000   496.1347m  496.1347u  124.1022u 
+   50.11872k    1.0000   493.9151m  493.9151u  155.5364u 
+   63.09573k    1.0000   490.4574m  490.4574u  194.4380u 
+   79.43282k    1.0000   485.1231m  485.1231u  242.1206u 
+  100.00000k    1.0000   477.0141m  477.0141u  299.7168u 
+  125.89254k    1.0000   464.9558m  464.9558u  367.7829u 
+  158.48932k    1.0000   447.5874m  447.5874u  445.7154u 
+  199.52623k    1.0000   423.6503m  423.6503u  531.1136u 
+  251.18864k    1.0000   392.5065m  392.5065u  619.4792u 
+  316.22777k    1.0000   354.7116m  354.7116u  704.7827u 
+  398.10717k    1.0000   312.2423m  312.2423u  781.0371u 
+  501.18723k    1.0000   268.0615m  268.0615u  844.1398u 
+  630.95734k    1.0000   225.2079m  225.2079u  892.8190u 
+  794.32823k    1.0000   185.9867m  185.9867u  928.2434u 
+    1.00000x    1.0000   151.6572m  151.6572u  952.8905u 
+y
+
+          ***** job concluded
+ ******  
+ lab2.sp
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz
+ cpu MHz	: 2600.000
+ CPU(s)		: 40
+  
+ OS:
+ Linux version 3.10.0-1160.102.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Tue Oct 17 15:42:21 UTC 2023
+
+ System loadavg : 15.63 15.53 15.51 16/1730 35737
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       3 # elements   =       4
+  # resistors   =       2 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           1
+  ac analysis        0.00          31          31
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        531.41 megabytes
+           total cpu time            0.01 seconds
+           total elapsed time        0.06 seconds
+           job started at     18:01:44 05/26/2026
+           job ended   at     18:01:45 05/26/2026
+
+>info:         ***** hspice job concluded
+           job total runtime         0.06 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.05(s)

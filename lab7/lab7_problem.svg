@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1328" height="960" viewBox="0 0 1328 960">
+  <rect width="1328" height="960" fill="#fff"/>
+  <rect x="27" y="24" width="1283" height="53" fill="#ffff8a"/>
+  <text x="42" y="61" font-family="Arial, 'Malgun Gothic', sans-serif" font-size="32" font-weight="600" fill="#000">
+    실습문제 7. <tspan font-family="Times New Roman, serif" font-weight="700">MOSFET</tspan>의 <tspan font-family="Times New Roman, serif" font-weight="700">Inverter</tspan> 특성 분석하기
+  </text>
+
+  <text x="65" y="158" font-family="Times New Roman, serif" font-size="31" fill="#111">
+    <tspan x="65" dy="0">Create a netlist named “lab7.sp” which describes the circuit shown at figure.</tspan>
+    <tspan x="65" dy="33">The length for both MOS device is 1u, and the width is 20u.</tspan>
+    <tspan x="65" dy="33">The pulse is (vlow=0.2, vhigh=4.8, tdly=2n, tf=fr=1n, pw=5n, trep=20n)</tspan>
+    <tspan x="65" dy="33">The tran is 20n in 200p steps, and use the MOSFET model</tspan>
+    <tspan x="65" dy="33">( .MODEL nch NMOS level = 13</tspan>
+    <tspan x="65" dy="33">&#160;&#160;.MODEL pch PMOS level = 13)</tspan>
+    <tspan x="65" dy="33">Sweep VIN from 0V to 5V in 500mV increments. Print out V(out) and V(in).</tspan>
+  </text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M346 599 L451 599"/>
+    <path d="M451 599 L451 536"/>
+    <path d="M451 536 L547 536"/>
+    <path d="M451 599 L451 700"/>
+    <path d="M451 700 L547 700"/>
+    <path d="M346 599 L346 689"/>
+    <path d="M346 738 L346 862"/>
+    <path d="M346 862 L602 862"/>
+    <path d="M602 862 L712 862"/>
+    <path d="M712 862 L852 862"/>
+    <path d="M602 479 L852 479"/>
+    <path d="M852 479 L852 689"/>
+    <path d="M852 738 L852 862"/>
+    <path d="M604 479 L604 512"/>
+    <path d="M604 559 L604 618"/>
+    <path d="M604 678 L604 759"/>
+    <path d="M604 759 L604 862"/>
+    <path d="M604 619 L711 619"/>
+    <path d="M711 619 L711 672"/>
+    <path d="M711 695 L712 862"/>
+  </g>
+
+  <circle cx="451" cy="599" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="604" cy="619" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="602" cy="862" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+  <circle cx="712" cy="860" r="7.5" fill="#222" stroke="#000" stroke-width="3"/>
+
+  <text x="335" y="583" font-family="Times New Roman, serif" font-size="31" fill="#000">in</text>
+  <text x="630" y="609" font-family="Times New Roman, serif" font-size="31" fill="#000">out</text>
+  <text x="574" y="842" font-family="Times New Roman, serif" font-size="31" fill="#000">0</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="346" cy="713" r="24"/>
+  </g>
+  <path d="M331 714 C337 704, 342 704, 347 714 C353 724, 359 724, 365 714" stroke="#000" stroke-width="3.5" fill="none"/>
+  <text x="367" y="693" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">+</text>
+  <text x="365" y="759" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">-</text>
+  <text x="255" y="705" font-family="Times New Roman, serif" font-size="32" fill="#000">
+    V<tspan baseline-shift="sub" font-size="20">i</tspan>
+  </text>
+  <text x="230" y="755" font-family="Times New Roman, serif" font-size="32" fill="#000">Pulse</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="#fff">
+    <circle cx="852" cy="713" r="24"/>
+  </g>
+  <path d="M837 714 C843 704, 848 704, 853 714 C859 724, 865 724, 871 714" stroke="#000" stroke-width="3.5" fill="none"/>
+  <text x="875" y="696" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">+</text>
+  <text x="874" y="761" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#000">-</text>
+  <text x="914" y="739" font-family="Times New Roman, serif" font-size="32" fill="#000">VDD</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M558 510 L558 560"/>
+    <path d="M558 678 L558 728"/>
+    <path d="M604 559 L558 559"/>
+    <path d="M604 679 L558 679"/>
+    <path d="M547 536 L547 559"/>
+    <path d="M547 700 L547 678"/>
+    <path d="M604 512 L558 512"/>
+    <path d="M604 728 L558 728"/>
+  </g>
+  <path d="M598 512 L572 512 L572 559 L598 559" stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M598 679 L572 679 L572 728 L598 728" stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square" stroke-linejoin="round"/>
+  <polygon points="559,512 571,507 571,517" fill="#000"/>
+  <path d="M572 512 L602 512" stroke="#000" stroke-width="3" fill="none"/>
+  <polygon points="604,728 592,723 592,733" fill="#000"/>
+  <path d="M572 728 L602 728" stroke="#000" stroke-width="3" fill="none"/>
+
+  <text x="632" y="541" font-family="Times New Roman, serif" font-size="31" font-style="italic" font-weight="700" fill="#000">Mp1</text>
+  <text x="620" y="723" font-family="Times New Roman, serif" font-size="31" font-style="italic" font-weight="700" fill="#000">Mn1</text>
+
+  <g stroke="#000" stroke-width="4" fill="none" stroke-linecap="square">
+    <path d="M699 672 L722 672"/>
+    <path d="M699 685 L722 685"/>
+  </g>
+  <text x="762" y="675" font-family="Times New Roman, serif" font-size="31" font-style="italic" fill="#000">C</text>
+  <text x="725" y="717" font-family="Times New Roman, serif" font-size="31" fill="#000">0.75pF</text>
+
+  <g stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <path d="M602 862 L602 909"/>
+    <path d="M581 909 L623 909"/>
+    <path d="M587 918 L617 918"/>
+    <path d="M594 927 L610 927"/>
+  </g>
+</svg>
